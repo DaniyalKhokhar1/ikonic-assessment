@@ -1,0 +1,81 @@
+/*
+Theme Name: Ikonic Assessment
+Theme URI: https: //github.com/DaniyalKhokhar1/ikonic-assessment
+Author: Daniyal Khokhar
+Author URI: https://github.com/DaniyalKhokhar1
+Description: Ikonic Assessment Theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ikonic-assessment
+*/
+
+.wp-block-navigation__submenu-container {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    padding: 10px;
+}
+
+.wp-block-navigation__submenu-container:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.wp-block-navigation-item.has-child:hover>.wp-block-navigation__submenu-container {
+    display: block;
+}
+
+.projects-archive {
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.project-item {
+    background: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.project-item:hover {
+    background: #eaeaea;
+}
+
+.view-project-btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #0073aa;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.view-project-btn:hover {
+    background: #005177;
+}
+
+.single-project {
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    .wp-block-group {
+        padding: 20px;
+    }
+}

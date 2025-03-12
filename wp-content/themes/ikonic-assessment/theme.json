@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "customTemplates": [
+        {
+            "name": "archive-projects",
+            "title": "Projects Archive",
+            "postTypes": ["projects"]
+        },
+        {
+            "name": "single-projects",
+            "title": "Single Project",
+            "postTypes": ["projects"]
+        }
+    ],
+    "settings": {
+        "color": {
+            "palette": [
+                { "name": "Primary", "slug": "primary", "color": "#0073aa" },
+                { "name": "Secondary", "slug": "secondary", "color": "#222" }
+            ]
+        },
+        "typography": {
+            "fontSizes": [
+                { "name": "Small", "slug": "small", "size": "14px" },
+                { "name": "Large", "slug": "large", "size": "24px" }
+            ]
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        }
+    }
+}

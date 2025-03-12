@@ -1,0 +1,41 @@
+
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"wp-block-group is-layout-constrained"} -->
+<main class="wp-block-group is-layout-constrained">
+    <!-- Filter Form -->
+    <form method="GET">
+        <label>Start Date:</label>
+        <input type="date" name="start_date">
+        
+        <label>End Date:</label>
+        <input type="date" name="end_date">
+    
+        <button type="submit">Filter</button>
+    </form>
+
+    <!-- wp:heading {"level":1} -->
+    <h1>Our Projects</h1>
+    <!-- /wp:heading -->
+
+    <!-- wp:query {"query":{"postType":"projects","perPage":6},"displayLayout":{"type":"grid","columns":3}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template -->
+        <article class="wp-block-post">
+            <!-- wp:post-featured-image {"isLink":true} /-->
+            <!-- wp:post-title {"isLink":true} /-->
+            <!-- wp:post-excerpt /-->
+            <!-- wp:post-date /-->
+        </article>
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-pagination /-->
+
+    </div>
+    <!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->
+
