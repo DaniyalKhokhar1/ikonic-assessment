@@ -88,12 +88,25 @@ function umm_get_unused_media()
         $url = $attachment->guid;
         $filename = basename($url);
 
-        $used = $wpdb->get_var($wpdb->prepare(
+        // Check if media is attached to a post
+        $is_attached = $wpdb->get_var($wpdb->prepare(
+            "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_parent = %d",
+            $id
+        ));
+
+        // Check if media is used in post content
+        $is_used_in_content = $wpdb->get_var($wpdb->prepare(
             "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_content LIKE %s",
             '%' . $wpdb->esc_like($url) . '%'
         ));
 
-        if (!$used) {
+        // Check if media ID is stored in post meta
+        $is_used_in_meta = $wpdb->get_var($wpdb->prepare(
+            "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_value = %d",
+            $id
+        ));
+
+        if (!$is_attached && !$is_used_in_content && !$is_used_in_meta) {
             $unused[] = ['id' => $id, 'url' => $url, 'filename' => $filename];
         }
     }
